@@ -1,22 +1,12 @@
 import 'dart:io';
 
-class Produk {
-  String nama;
-  int stok;
-  double harga;
-
-  Produk(this.nama, this.stok, this.harga);
-
-  void display() {
-    print('Nama: $nama | Stok: $stok | Harga: Rp$harga');
-  }
-}
+import 'produk_base.dart';
 
 class Toko {
-  List<Produk> daftarProduk = [];
+  List<ProdukBase> daftarProduk = [];
 
-  void tambahProduk(String nama, int stok, double harga) {
-    daftarProduk.add(Produk(nama, stok, harga));
+  void tambahProduk(ProdukBase produk) {
+    daftarProduk.add(produk);
   }
 
   void tampilkanProduk() {
@@ -60,37 +50,5 @@ class Toko {
 
     print(
         'Anda membeli $jumlah ${produkDipilih.nama}. Total harga: Rp$totalHarga');
-  }
-}
-
-void main() {
-  var toko = Toko();
-
-  toko.tambahProduk('Buku Tulis', 20, 10000);
-  toko.tambahProduk('Pensil 2B', 50, 5000);
-  toko.tambahProduk('Pulpen Hitam', 30, 7000);
-
-  while (true) {
-    print('\n=== Sistem Penjualan Toko Peralatan Tulis ===');
-    print('1. Lihat Produk');
-    print('2. Beli Produk');
-    print('3. Keluar');
-    stdout.write('Pilih menu: ');
-
-    String? pilihan = stdin.readLineSync();
-
-    switch (pilihan) {
-      case '1':
-        toko.tampilkanProduk();
-        break;
-      case '2':
-        toko.beliProduk();
-        break;
-      case '3':
-        print('Terima kasih telah berbelanja!');
-        return;
-      default:
-        print('Pilihan tidak valid.');
-    }
   }
 }
