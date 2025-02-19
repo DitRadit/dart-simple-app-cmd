@@ -41,7 +41,7 @@ class MainApp extends StatelessWidget {
                       shape: BoxShape.circle,
                     ),
                     child: Image.network(
-                      'https://picsum.photos/seed/598/600',
+                      'https://media.tenor.com/ZVS9i2eGYFwAAAAe/caelus-honkai-star-rail-caelus.png',
                       fit: BoxFit.cover,
                     ),
                   ),
