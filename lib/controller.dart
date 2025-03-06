@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 
-/// Manages font size state
 class FontSizeController extends GetxController {
   var fontSize = 16.0.obs;
 
@@ -9,7 +8,6 @@ class FontSizeController extends GetxController {
   }
 }
 
-/// Manages task completion state
 class TaskController extends GetxController {
   var isCompleted = false.obs;
 
